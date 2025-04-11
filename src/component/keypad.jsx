@@ -45,16 +45,17 @@ const Keypad = () => {
             return;
         }
         if(operation === ''){
+            if (left === '' && btn === '0') return ;
             if(!expressionFlag) {
                 setExpressionFlag(true);
             console.log(expressionFlag)
             }
-            if (left === '' && btn === '0') return ;
             console.log(left);
             if(left.length === 5 ) return alert("5자리까지만 입력 가능합니다.");
             setLeft(btn);
             setBeforeCount(btn);
         }else{
+            // if (right === '' && btn === '0') return ;
             if(right.length === 5 ) return alert("5자리까지만 입력 가능합니다.");
             setRight(btn);
             setBeforeCount(btn);
